@@ -278,7 +278,7 @@ function $ViewDirective(   $state,   $compile,   $controller,   $injector,   $ui
           currentScope.$emit('$viewContentLoaded');
           if (onloadExp) currentScope.$eval(onloadExp);
 
-          if (!angular.isDefined(autoscrollExp) || !autoscrollExp || $scope.$eval(autoscrollExp)) {
+          if (angular.isDefined(autoscrollExp) && !autoscrollExp || $scope.$eval(autoscrollExp)) {
             $uiViewScroll(currentEl);
           }
         }
